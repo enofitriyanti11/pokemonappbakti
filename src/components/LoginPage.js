@@ -1,6 +1,8 @@
 import React from "react";
 import { AiOutlineVerticalRight } from "react-icons/ai";
 import bg from "../img/takeshi.jpg";
+
+
 const LoginPage = () => {
   return (
     <div class="hero min-h-screen">
