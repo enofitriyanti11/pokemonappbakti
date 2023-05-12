@@ -1,12 +1,13 @@
 import React from "react";
 import Navbar from "../components/Navbar";
-import HeroImg from "../components/HeroImg";
-
+import ListPokemon from "../components/ListPokemon";
+import Footer from "../components/Footer";
 
 const Home = () => {
   return <div>
     <Navbar/>
-    <HeroImg/>
+    <ListPokemon/>
+    <Footer/>
   </div>;
 };
 
