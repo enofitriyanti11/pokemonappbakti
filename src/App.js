@@ -4,8 +4,8 @@ import Home from "./routes/Home";
 import { BrowserRouter, Routes, Route  } from "react-router-dom";
 import Pokemon from "./routes/Pokemon";
 import Poke from "./routes/Poke";
-import LoginPage from "./components/LoginPage";
-import RegisterPage from "./components/RegisterPage";
+import LoginPage from "./components/auth/LoginPage";
+import RegisterPage from "./components/auth/RegisterPage";
 
 function App() {
   return (
@@ -17,6 +17,7 @@ function App() {
           <Route path="/poke" element={<Poke />} />
           <Route path="/login" element={<LoginPage />} />
           <Route path="/register" element={<RegisterPage />} />
+          
         </Routes>
       </BrowserRouter>
     </>

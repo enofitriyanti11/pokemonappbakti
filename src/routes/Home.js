@@ -3,7 +3,7 @@ import Navbar from "../components/Navbar";
 import HeroImg from "../components/HeroImg";
 
 
-const Home = () => {
+function Home () {
   return <div>
     <Navbar/>
     <HeroImg/>

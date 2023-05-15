@@ -1,9 +1,9 @@
 import React from "react";
 import Navbar from "../components/Navbar";
-import ListPokemon from "../components/ListPokemon";
+import ListPokemon from "../components/dashboard/ListPokemon";
 import Footer from "../components/Footer";
 
-const Home = () => {
+function Home () {
   return <div>
     <Navbar/>
     <ListPokemon/>

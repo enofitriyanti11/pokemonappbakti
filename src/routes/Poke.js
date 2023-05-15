@@ -1,13 +1,14 @@
 import Footer from '../components/Footer';
-import MyPokemon from '../components/MyPokemon';
+
 import Navbar from '../components/Navbar';
+import MyPokemons from '../components/dashboard/MyPokemon';
 
 
 function Poke() {
   return (
   <div>
     <Navbar />
-    <MyPokemon/>
+    <MyPokemons/>
     <Footer />
   </div>
 
