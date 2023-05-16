@@ -4,7 +4,8 @@ export default function MyPokemons() {
   const [myPokemon, setMyPokemons] = useState([]);
 
   const getMyPokemons = () => {
-    const savedData = JSON.parse(localStorage.getItem("myPokemon"));
+    const savedData = JSON.parse(localStorage.getItem("myPokemonList"));
+    console.log(savedData);
     if (savedData) {
       setMyPokemons(savedData);
     }
@@ -20,23 +21,14 @@ export default function MyPokemons() {
     );
 
     if (confirmation) {
-      // membuat salinan array
       const updatedMyPokemon = [...myPokemon];
+      const index = updatedMyPokemon.findIndex((p) => p.name === pokemon.name);
 
-      // mencari index data yang akan dihapus
-      const index = updatedMyPokemon.findIndex((p) => p.id === pokemon.id);
-
-      //  kodnisi menghapus data dari array jika ditemukan
       if (index !== -1) {
         updatedMyPokemon.splice(index, 1);
-        //splice() adalah sebuah method built-in pada JavaScript array yang digunakan untuk menambah, menghapus, dan/atau mengganti elemen pada sebuah array. Method ini menerima dua parameter: index dan howMany, dimana index adalah posisi dari elemen yang ingin diubah dan howMany adalah jumlah elemen yang ingin diubah.
-        //mengubah array updatedMyPokemon dengan menghapus satu elemen dari array tersebut pada indeks yang ditentukan dengan nilai index
-        //elemen yang dihapus adalah elemen yang memiliki indeks yang sama dengan indeks dari pokemon yang ingin dihapus dari array.
 
-        // menyimpan array yang diperbarui ke local storage
-        localStorage.setItem("myPokemon", JSON.stringify(updatedMyPokemon));
+        localStorage.setItem("myPokemonList", JSON.stringify(updatedMyPokemon)); // mengubah key menjadi "myPokemonList"
 
-        // memperbarui state dengan array yang diperbarui
         setMyPokemons(updatedMyPokemon);
         alert("Pokemon berhasil dilepas dari My Pokemon!");
       }
@@ -53,31 +45,33 @@ export default function MyPokemons() {
         </div>
       </div>
       <div class="mx-auto max-w-screen-xl flex justify-center p-4">
-        <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-x-4 gap-y-8">
-          {myPokemon.map((pokemon) => (
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-x-4 gap-y-8">
+          {myPokemon.map((pokemon, name) => (
             <div
-              key={pokemon.id}
-              class="card w-full bg-base-100 shadow-xl rounded-lg"
+              key={name}
+              className="card w-full bg-base-100 shadow-xl rounded-lg"
             >
-              <div className="card p-9 rounded-lg ">
+              <div className="card p-5 rounded-lg">
                 <img
                   src={pokemon.image}
                   alt=""
-                  className="rounded-t-lg object-cover h-full w-full"
+                  className="rounded-t-lg object-cover h-44 mx-auto"
                 />
               </div>
               <div className="p-4">
-                <h2 className="text-xl font-semibold my-2">{pokemon.name}</h2>
+                <h2 className="uppercase text-center font-semibold my-2">
+                  {pokemon.name}
+                </h2>
                 <div className="flex justify-between items-center my-2">
-                  <p className="text-gray-600">Price:</p>
-                  <p className="text-gray-800">{pokemon.price}</p>
-                </div>
-                <div className="flex justify-start my-2">
+                  <div>
+                    <p className="text-gray-600">See Details</p>
+                    <p className="text-gray-800"></p>
+                  </div>
                   <button
                     onClick={() => deletePokemon(pokemon)}
                     className="btn btn-warning rounded-full"
                   >
-                    Release Pokemon
+                    Delete
                   </button>
                 </div>
               </div>

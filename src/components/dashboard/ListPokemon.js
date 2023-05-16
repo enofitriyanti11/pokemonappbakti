@@ -3,7 +3,7 @@ import axios from "axios";
 import Swal from "sweetalert2";
 
 function ListPokemon() {
-// const pokemons = [
+  // const pokemons = [
 
   //   {
   //     id: 1,
@@ -89,7 +89,8 @@ function ListPokemon() {
 
         for (const pokemon of pokemonList) {
           const pokemonResponse = await axios.get(pokemon.url);
-          const pokemonImage = pokemonResponse.data.sprites.front_default;
+          const pokemonImage =
+            pokemonResponse.data.sprites.other.dream_world.front_default;
 
           pokemonData.push({
             name: pokemon.name,
@@ -161,32 +162,34 @@ function ListPokemon() {
           </h1>
         </div>
       </div>
-      <div className="mx-auto max-w-screen-xl flex justify-center p-4">
+      <div className="mx-4 max-w-screen-xl flex justify-center p-4">
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-x-4 gap-y-8">
           {pokemons.map((pokemon, name) => (
             <div
               key={name}
               className="card w-full bg-base-100 shadow-xl rounded-lg"
             >
-              <div className="card p-9 rounded-lg">
+              <div className="card p-5 rounded-lg">
                 <img
                   src={pokemon.image}
                   alt=""
-                  className="rounded-t-lg object-cover h-full w-full"
+                  className="rounded-t-lg object-cover h-44 mx-auto"
                 />
               </div>
               <div className="p-4">
-                <h2 className="text-xl font-semibold my-2">{pokemon.name}</h2>
+                <h2 className="uppercase text-center font-semibold my-2">
+                  {pokemon.name}
+                </h2>
                 <div className="flex justify-between items-center my-2">
-                  <p className="text-gray-600">Price:</p>
-                  <p className="text-gray-800">{pokemon.price}</p>
-                </div>
-                <div className="flex justify-start my-2">
+                  <div>
+                    <p className="text-gray-600">See Details</p>
+                    <p className="text-gray-800"></p>
+                  </div>
                   <button
                     onClick={() => addPokemon(pokemon)}
                     className="btn btn-warning rounded-full"
                   >
-                    Add Pokemon
+                    Add
                   </button>
                 </div>
               </div>
