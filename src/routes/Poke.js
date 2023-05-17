@@ -4,7 +4,7 @@ import Navbar from '../components/Navbar';
 import MyPokemons from '../components/dashboard/MyPokemon';
 
 
-function Poke() {
+function MyPokemon() {
   return (
   <div>
     <Navbar />
@@ -15,4 +15,4 @@ function Poke() {
   );
 }
 
-export default Poke;
+export default MyPokemon;

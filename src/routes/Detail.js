@@ -1,15 +1,14 @@
-import React from 'react'
-import Navbar from '../components/Navbar';
-import Detail from '../components/dashboard/DetailPokemon';
-import Footer from '../components/Footer';
-function Detail  () {
+import React from "react";
+import Navbar from "../components/Navbar";
+import DetailPokemon from "../components/dashboard/DetailPokemon";
+
+function Detail() {
   return (
     <div>
-        <Navbar/>
-        <Detail/>
-        <Footer/>
+      <Navbar />
+      <DetailPokemon />
     </div>
-  )
+  );
 }
 
-export default Detail
+export default Detail;

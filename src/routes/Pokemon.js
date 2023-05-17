@@ -3,7 +3,7 @@ import Navbar from "../components/Navbar";
 import ListPokemon from "../components/dashboard/ListPokemon";
 import Footer from "../components/Footer";
 
-function Home () {
+function Pokemon () {
   return <div>
     <Navbar/>
     <ListPokemon/>
@@ -11,4 +11,4 @@ function Home () {
   </div>;
 };
 
-export default Home;
+export default Pokemon;

@@ -37,7 +37,7 @@ function LoginPage() {
         />
       </div>
       <div className="hero-overlay bg-opacity-60">
-        <a href="/">
+        <a href="/login">
           <button className="btn btn-link text-white no-underline">
             <AiOutlineVerticalRight size={20} className="text-white" /> Back
           </button>
