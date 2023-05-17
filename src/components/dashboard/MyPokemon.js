@@ -13,8 +13,6 @@ export default function MyPokemons() {
     }
   };
 
-  console.log("======MyPoke", myPokemon);
-  console.log("======MyPoke length", myPokemon.length);
   useEffect(() => {
     getMyPokemons();
   }, []);
@@ -47,12 +45,10 @@ export default function MyPokemons() {
   };
 
   return (
-    <div class="bg-gradient-to-r from-indigo-500 via-purple-500 to-pink-500 h-auto pt-10">
+    <div class="bg-gradient-to-r from-indigo-500 via-purple-500 to-pink-500 h-auto pt-10 min-h-screen">
       <div class="mx-auto max-w-screen-xl px-4 py-16 sm:px-6 sm:py-10 lg:max-w-7xl lg:px-8">
         <div class="py-10">
-          <h1 class="text-2xl md:text-5xl text-white font-bold">
-            My Pokemon
-          </h1>
+          <h1 class="text-2xl md:text-5xl text-white font-bold">My Pokemon</h1>
         </div>
       </div>
       <div className="mx-auto max-w-screen-xl flex justify-center p-4">
@@ -74,14 +70,6 @@ export default function MyPokemons() {
                   {pokemon.name}
                 </h2>
                 <div className="flex justify-center  my-2">
-                  {/* <div>
-                    <a
-                      href={`/detail/${pokemon.name}`}
-                      className=" text-xs text-gray-600 underline hover:no-underline"
-                    >
-                      See Details
-                    </a>
-                  </div> */}
                   <button
                     onClick={() => deletePokemon(pokemon)}
                     className="btn btn-warning rounded-full"
