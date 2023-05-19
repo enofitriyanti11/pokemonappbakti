@@ -3,7 +3,7 @@ import { AiOutlineVerticalRight } from "react-icons/ai";
 import bg from "../../img/takeshi.jpg";
 import axios from "axios";
 import { useNavigate } from "react-router-dom";
-import "react-toastify/dist/ReactToastify.css";
+import Swal from "sweetalert2";
 
 function LoginPage() {
   const navigate = useNavigate();
@@ -24,6 +24,9 @@ function LoginPage() {
       .post("https://reqres.in/api/login", { email, password })
       .then((response) => {
         localStorage.setItem("authToken", true);
+        Swal.fire("Success", "Login successful!", "success").then(() => {
+          window.location.href = "/";
+        });
         navigate("/");
       });
   };
@@ -37,7 +40,7 @@ function LoginPage() {
         />
       </div>
       <div className="hero-overlay bg-opacity-60">
-        <a href="/login">
+        <a href="/">
           <button className="btn btn-link text-white no-underline">
             <AiOutlineVerticalRight size={20} className="text-white" /> Back
           </button>
@@ -51,7 +54,7 @@ function LoginPage() {
             repudiandae et a id nisi.
           </p>
         </div>
-        <div className="card flex-shrink-0 w-full max-w-sm shadow-6xl bg-base-100">
+        <div className="card flex-shrink-0 w-full max-w-sm shadow-6xl bg-white/70">
           <div className="card-body">
             <form onSubmit={handleSubmit}>
               <div className="form-control">

@@ -2,7 +2,7 @@ import React, { useState, useEffect } from "react";
 import { useParams } from "react-router-dom";
 import axios from "axios";
 import Swal from "sweetalert2";
-import { AiOutlineVerticalRight } from "react-icons/ai";
+import { AiFillBackward } from "react-icons/ai";
 
 function addPokemon(pokemon) {
   Swal.fire({
@@ -108,20 +108,22 @@ function DetailPokemon() {
         </div>
 
         <div className="bg-white/25 items-center mt-10 px-8 md:px-14 p-4 rounded-3xl mx-auto max-w-xs md:max-w-[70rem] grid lg:grid-cols-2">
-          
           <div className="hidden lg:block px-5">
-          <div className="flex justify-start">
-            <a href="/pokemon">
-              <button className="btn btn-link text-white no-underline">
-                <AiOutlineVerticalRight size={20} className="text-white" /> Back
-              </button>
-            </a>
-          </div>
-            <img
-              src={pokemon.image}
-              alt="event"
-              className="w-[300px] rounded-xl"
-            />
+            <div className="flex justify-start">
+              <a href="/pokemon">
+                <button className="btn btn-link text-white no-underline">
+                  <AiFillBackward size={20} className="text-white" />{" "}
+                  Back
+                </button>
+              </a>
+            </div>
+            <div className="p-9 rounded-lg ">
+              <img
+                src={pokemon.image}
+                alt="event"
+                className="object-contain h-48 w-96"
+              />
+            </div>
           </div>
           <div className="py-2 wd:py-12">
             <h2 className="uppercase text-3xl font-semibold text-slate-700 md:text-3xl lg:text-4xl">
