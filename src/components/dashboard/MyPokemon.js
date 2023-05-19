@@ -45,7 +45,7 @@ export default function MyPokemons() {
   };
 
   return (
-    <div class="bg-gradient-to-r from-indigo-500 via-purple-500 to-pink-500 h-auto pt-10 min-h-screen">
+    <div class="bg-gradient-to-r from-indigo-500 via-purple-500 to-pink-500 h-auto pt-10">
       <div class="mx-auto max-w-screen-xl px-4 py-16 sm:px-6 sm:py-10 lg:max-w-7xl lg:px-8">
         <div class="py-10">
           <h1 class="text-2xl md:text-5xl text-white font-bold">My Pokemon</h1>
