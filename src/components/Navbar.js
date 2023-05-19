@@ -50,11 +50,11 @@ const Navbar = () => {
         )}
         <li>
           {isUserLoggedIn ? (
-            <Link to="/" onClick={handleLogout}>
+            <Link to="/" onClick={() => handleLogout(true)}>
               Logout
             </Link>
           ) : (
-            <Link to="/login">Login</Link>
+            <Link to="/login" onClick={() => navigate('/SignIn')}> Login</Link>
           )}
         </li>
       </ul>
