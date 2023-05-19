@@ -1,7 +1,10 @@
 import React from "react";
 import IntroImg from "../img/pika.png";
+import { Link } from "react-router-dom";
+import { isLoggedIn } from "../service/login";
 
 function HeroImg() {
+  const isUserLoggedIn = isLoggedIn();
   return (
     <div className="hero min-h-screen">
       <div className="mask">
@@ -20,9 +23,15 @@ function HeroImg() {
             excepturi exercitationem quasi. In deleniti eaque aut repudiandae et
             a id nisi.
           </p>
-          <a href="/login">
-            <button className="btn btn-primary">Get Started</button>
-          </a>
+          {isUserLoggedIn ? (
+            <Link to="/pokemon">
+              <button className="btn btn-primary">Get Started</button>
+            </Link>
+          ) : (
+            <Link to="/login">
+              <button className="btn btn-primary">Get Started</button>
+            </Link>
+          )}
         </div>
       </div>
     </div>
