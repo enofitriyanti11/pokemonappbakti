@@ -1,0 +1,37 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: pokemonappbakti-deployment
+  namespace: development
+  labels:
+    app: pokemonappbakti
+spec:
+  replicas: 3
+  selector:
+    matchLabels:
+      app: pokemonappbakti
+  template:
+    metadata:
+      labels:
+        app: pokemonappbakti
+    spec:
+      containers:
+      - name: pokemonappbakti
+        image: enofitriyanti11/pokemonappbakti:_TAG_
+        ports:
+        - containerPort: 3000
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: pokemonappbakti-service
+  namespace: development
+spec:
+  selector:
+    app: pokemonappbakti
+  type: LoadBalancer
+  ports:
+    - name: http
+      port: 80
+      targetPort: 3000
+      protocol: TCP
